@@ -31,11 +31,11 @@ public class scenecontroller : MonoBehaviour
 
             if (swipeVector.magnitude >= minSwipeDistance)
             {
-                DetectSwipeDirection(swipeVector);
+                DetecSwipeDirection(swipeVector);
             }
         }
    }
-   private void DetectSwipeDirection(Vector2 swipeVector)
+   private void DetecSwipeDirection(Vector2 swipeVector)
     {
         float angle = Vector2.SignedAngle(Vector2.right, swipeVector);
         if (angle >= -45f && angle <= 45f)
