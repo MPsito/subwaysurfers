@@ -1,5 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
+using System.Collections;
 
 public class character : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class character : MonoBehaviour
  private float moveDuration = 0.2f;
  private bool isGrounded = true;
  private bool isMoving = false;
+ private bool isRolling = false;
  private void Start()
     {
         characterAnimator.Play(characterData.runAnimationName, 0, 0f);
@@ -38,14 +40,18 @@ public class character : MonoBehaviour
             characterRigidBody.AddForce(Vector3.down * jumpForce * 2, ForceMode.Impulse);
            }
            characterAnimator.Play(characterData.rollAnimationName, 0, 0f);
+           isRolling = true;
+           StartCoroutine(ResetRoll());
         }
      
     public void Moveleft()
     {
-       Move(Vector3.left);
+        if (transform.position.x <= distanceTomove) return;
+        Move(Vector3.left);
     }
     public void MoveRight()
     {
+           if (transform.position.x <= distanceTomove) return;
            Move(Vector3.right);
     }
     private void Move(Vector3 direction)
@@ -59,13 +65,24 @@ public class character : MonoBehaviour
             isMoving = false;
         });
     }
+     private IEnumerator ResetRoll()
+    {
+        yield return new WaitForSeconds(characterAnimator.GetCurrentAnimatorStateInfo(0).length);
+        isRolling = false;
+    }
     public void  OnCollisionEnter(Collision collision) 
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
+            if (!isRolling)
+            {
+                characterAnimator.Play(characterData.runAnimationName, 0, 0f);
+            }
+            isGrounded = true;
             characterAnimator.Play(characterData.runAnimationName, 0, 0f);
             isGrounded = true;
         }
     }
+   
  
 }
