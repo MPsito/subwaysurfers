@@ -36,7 +36,11 @@ public class PlatformManager : MonoBehaviour
     {
     if (isRunning)
         {
-            platformsPivot.Translate(Vector3.back * speed * Time.deltaTime);
+            transform.Translate(Vector3.back * speed * Time.deltaTime);
         }    
-    }   
+    }  
+    public void StopPlatforms()
+    {
+        isRunning = false;
+    } 
 }
