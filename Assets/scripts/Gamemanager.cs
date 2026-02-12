@@ -1,16 +1,25 @@
 using UnityEngine;
-
-public class Gamemanager : MonoBehaviour
+using UnityEngine.Events;
+ 
+public class GameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField]
+    private UnityEvent onGameStart;
+    [SerializeField]
+    private UnityEvent onGameLose;
+    private void Start()
     {
-        
+        StartGame();
     }
-
-    // Update is called once per frame
-    void Update()
+    public void StartGame()
     {
-        
+        onGameStart?.Invoke();
+    }
+    public void LoseGame()
+    {
+        onGameLose?.Invoke();
     }
 }
+ 
+ 
+ 

@@ -143,7 +143,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7011426368885680315, guid: bf29b4ec97e23ab47ba1ac38e89bc356, type: 3}
       propertyPath: m_TagString
-      value: obstacle
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 7639872497328632321, guid: bf29b4ec97e23ab47ba1ac38e89bc356, type: 3}
       propertyPath: m_LocalScale.x
@@ -231,7 +231,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
