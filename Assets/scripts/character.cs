@@ -64,7 +64,7 @@ public class character : MonoBehaviour
      
     public void Moveleft()
     {
-        if (transform.position.x >= distanceTomove) return;
+        if (transform.position.x <= distanceTomove) return;
         Move(Vector3.left);
     }
     public void MoveRight()
