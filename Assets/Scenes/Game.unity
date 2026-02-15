@@ -500,8 +500,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1570729656}
-        m_TargetAssemblyTypeName: character, Assembly-CSharp
-        m_MethodName: Moveleft
+        m_TargetAssemblyTypeName: Character, Assembly-CSharp
+        m_MethodName: MoveLeft
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -515,8 +515,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1570729656}
-        m_TargetAssemblyTypeName: character, Assembly-CSharp
-        m_MethodName: MoveRight
+        m_TargetAssemblyTypeName: Character, Assembly-CSharp
+        m_MethodName: MoverRight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -737,7 +737,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1570729656}
-        m_TargetAssemblyTypeName: character, Assembly-CSharp
+        m_TargetAssemblyTypeName: Character, Assembly-CSharp
         m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
@@ -1102,7 +1102,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.72245544, y: 0.72245544, z: 0.72245544}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1776272467}
@@ -1122,10 +1122,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::character
   characterData: {fileID: 11400000, guid: 73b1ed95c8428de4394a624bf63db733, type: 2}
   characterAnimator: {fileID: 1776272469}
-  characterStartpivot: {fileID: 793864575}
   jumpForce: 5
-  distanceTomove: 1
-  moveDuration: 0.4
+  distanceToMove: 1
+  moveDuration: 1
+  ChararacterStartPivot: {fileID: 793864575}
+  onJump:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onMoveToSide:
+    m_PersistentCalls:
+      m_Calls: []
+  onRoll:
+    m_PersistentCalls:
+      m_Calls: []
+  onLose:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!54 &1570729657
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1481,7 +1505,7 @@ Transform:
   m_GameObject: {fileID: 2114325622}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -3.03}
+  m_LocalPosition: {x: 0, y: 0, z: -0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
