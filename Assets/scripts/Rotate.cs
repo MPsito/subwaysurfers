@@ -2,15 +2,10 @@ using UnityEngine;
 
 public class Rotate : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+   [SerializeField]
+   private Vector3 rotationSpeed = new Vector3 (0f, 0f, 0f);
+   void Update()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        transform.Rotate(rotationSpeed * Time.deltaTime);
     }
 }
