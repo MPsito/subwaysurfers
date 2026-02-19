@@ -7,7 +7,7 @@ TagManager:
   - ground
   - Ground
   - obstacle
-  - Obstacle
+  - Coin
   layers:
   - Default
   - TransparentFX
