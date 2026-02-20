@@ -47,6 +47,10 @@ public class Character : MonoBehaviour
     [SerializeField]
 
     private UnityEvent onRoll;
+    [SerializeField]
+    private Collider normalCollider;
+     [SerializeField]
+    private Collider rollCollider;
 
     [SerializeField]
 
@@ -71,6 +75,8 @@ public class Character : MonoBehaviour
     public void StartGame()
 
     {
+        normalCollider.enabled = true;
+        rollCollider.enabled = false;
 
         isRolling = false;
 
@@ -78,7 +84,7 @@ public class Character : MonoBehaviour
 
         isActive = true;
 
-        characterAnimator.Play(characterData.runAnimationName, 0, 0f);
+        characterAnimator.Play(characterData.jumpAnimationName, 0, 0f);
 
         transform.position= ChararacterStartPivot.position;
 
@@ -149,6 +155,8 @@ public class Character : MonoBehaviour
         onRoll?.Invoke();
 
         isRolling = true;
+        normalCollider.enabled = false;
+        rollCollider.enabled = true;
 
         StartCoroutine(ResetRoll());
 
@@ -205,6 +213,8 @@ public class Character : MonoBehaviour
         yield return new WaitForSeconds(characterAnimator.GetCurrentAnimatorStateInfo(0).length);
 
         isRolling = false;
+        normalCollider.enabled = true;
+        rollCollider.enabled = false;
 
     }
 
