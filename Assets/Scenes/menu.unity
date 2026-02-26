@@ -2988,7 +2988,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 849700143}
-  - component: {fileID: 849700142}
+  - component: {fileID: 849700144}
   m_Layer: 0
   m_Name: SceneController
   m_TagString: Untagged
@@ -2996,20 +2996,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &849700142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 849700141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0eaea9204b16b044b3d3fc9a05526e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::scenecontroller
-  fade: {fileID: 825120954}
-  fadeAnimationName: fade out
 --- !u!4 &849700143
 Transform:
   m_ObjectHideFlags: 0
@@ -3025,6 +3011,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &849700144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849700141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48a94c84fc0efc44ba0d8ce2bd94120c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::scenecontroller
+  fade: {fileID: 825120954}
+  fadeAnimationName: fade out
 --- !u!1001 &850836969
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6826,9 +6826,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 849700142}
+      - m_Target: {fileID: 849700144}
         m_TargetAssemblyTypeName: scenecontroller, Assembly-CSharp
-        m_MethodName: GoToSceneWithFade
+        m_MethodName: GoToSeneneWithFade
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

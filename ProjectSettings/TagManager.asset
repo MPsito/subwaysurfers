@@ -8,6 +8,9 @@ TagManager:
   - Ground
   - obstacle
   - Coin
+  - FxTemporaire
+  - Obstacle
+  - JumpPowerUp
   layers:
   - Default
   - TransparentFX

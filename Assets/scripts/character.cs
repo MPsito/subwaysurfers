@@ -23,6 +23,11 @@ public class Character : MonoBehaviour
     [SerializeField]
 
     private float jumpForce = 5f;
+    public float JumpForce
+    {
+        get {return jumpForce;}
+        set {jumpForce = value;}
+    }
 
     [SerializeField]
 
