@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9011462032555438198}
   - component: {fileID: 7410576617975070890}
+  - component: {fileID: -6156480741565000370}
   m_Layer: 0
   m_Name: BootsPowerup
   m_TagString: JumpPowerUp
@@ -54,6 +55,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.5545839, y: 3.585169, z: 2.5648403}
   m_Center: {x: -0.27729294, y: 3.1291616, z: 1.3284384}
+--- !u!114 &-6156480741565000370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326098151375989497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21c6e129ac18cdd4ca16473de3600168, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Rotate
+  rotationSpeed: {x: 0, y: 100, z: 0}
 --- !u!1001 &2658381951699298419
 PrefabInstance:
   m_ObjectHideFlags: 0

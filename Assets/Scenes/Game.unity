@@ -435,6 +435,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &260413522
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 260413524}
+  - component: {fileID: 260413523}
+  m_Layer: 0
+  m_Name: InstantiateBusPlatform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &260413523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260413522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c14030928ae97b42a1b9652da0bfaee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InstantiatePoolObjects
+  prefab: {fileID: 1225748252183196178, guid: fe954e91513ef9145969620f82b1c754, type: 3}
+--- !u!4 &260413524
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260413522}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -409.39575, y: -0.00002, z: 26277.023}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &313270479
 GameObject:
   m_ObjectHideFlags: 0
@@ -594,10 +639,26 @@ MonoBehaviour:
   platformPrefabs:
   - {fileID: 1041311743}
   - {fileID: 1559392588}
+  - {fileID: 260413523}
   securePlatformPrefabs:
   - {fileID: 584217359}
   initialPlatforms: 8
   speed: 5
+  onPlatformPassed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 663728701}
+        m_TargetAssemblyTypeName: PowerUPManager, Assembly-CSharp
+        m_MethodName: Platformpassed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &584217358
 GameObject:
   m_ObjectHideFlags: 0
@@ -747,6 +808,55 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &663728700
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 663728702}
+  - component: {fileID: 663728701}
+  m_Layer: 0
+  m_Name: PowerUpManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &663728701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663728700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49f012a04df322845a2d9193e88f75df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PowerUPManager
+  minPlatformsNumber: 5
+  maxPlatformsNumber: 7
+  powerUppools:
+  - {fileID: 1737166240}
+  powerUpoffset: 2
+--- !u!4 &663728702
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663728700}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.72078997, z: -0, w: 0.6931536}
+  m_LocalPosition: {x: -0.10318, y: -0.078, z: -0.0071326}
+  m_LocalScale: {x: 0.19545476, y: 0.13175239, z: 0.16876169}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &741546527
 GameObject:
   m_ObjectHideFlags: 0
@@ -2308,6 +2418,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1652416228}
   m_CullTransparentMesh: 1
+--- !u!1 &1737166239
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1737166241}
+  - component: {fileID: 1737166240}
+  m_Layer: 0
+  m_Name: InstantiateJumpPowerUp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1737166240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737166239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c14030928ae97b42a1b9652da0bfaee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InstantiatePoolObjects
+  prefab: {fileID: 1326098151375989497, guid: 284cbe8bb49941e49b5028b64ae12d20, type: 3}
+--- !u!4 &1737166241
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737166239}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.72078997, z: -0, w: 0.6931536}
+  m_LocalPosition: {x: -0.10318, y: -0.078, z: -0.0071326}
+  m_LocalScale: {x: 0.19545476, y: 0.13175239, z: 0.16876169}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1776272466
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2987,7 +3142,10 @@ SceneRoots:
   - {fileID: 1459457297}
   - {fileID: 1541858450}
   - {fileID: 584217360}
+  - {fileID: 260413524}
   - {fileID: 1559392589}
   - {fileID: 1309178916}
   - {fileID: 1887658192}
+  - {fileID: 663728702}
+  - {fileID: 1737166241}
   - {fileID: 1481071445}
