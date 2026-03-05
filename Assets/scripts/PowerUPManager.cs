@@ -35,7 +35,7 @@ private void SetPlatformsNumber()
         InstantiatePoolObjects pool = powerUppools[Random.Range(0, powerUppools.Length)];
         pool.InstantiateObject(Vector3.zero);
         GameObject powerUp = pool.GetCurrentObject();
-        powerUp.transform.localPosition += Vector3.up *powerUpoffset;
         platform.AddPowerUp(powerUp);
+        powerUp.transform.localPosition += Vector3.up *powerUpoffset;
     }
 }
