@@ -414,8 +414,12 @@ PrefabInstance:
       value: Billboard_2x1_05
       objectReference: {fileID: 0}
     - target: {fileID: 7584922919834519749, guid: 5e4321d23278ef641adb070ebaae3fe8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.26733696
+      objectReference: {fileID: 0}
+    - target: {fileID: 7584922919834519749, guid: 5e4321d23278ef641adb070ebaae3fe8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.35184
+      value: -0.47643
       objectReference: {fileID: 0}
     - target: {fileID: 7584922919834519749, guid: 5e4321d23278ef641adb070ebaae3fe8, type: 3}
       propertyPath: m_LocalPosition.y
