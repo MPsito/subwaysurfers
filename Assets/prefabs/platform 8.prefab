@@ -392,6 +392,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6697730450479562999}
     m_Modifications:
+    - target: {fileID: 736648077054433130, guid: d291b4f3e0bb5bf4baf2d8fc006701c5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 12c0d61ca01895e42a8ad0895b0bb0cc, type: 2}
+    - target: {fileID: 736648077054433130, guid: d291b4f3e0bb5bf4baf2d8fc006701c5, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 12c0d61ca01895e42a8ad0895b0bb0cc, type: 2}
     - target: {fileID: 1241276016436082367, guid: d291b4f3e0bb5bf4baf2d8fc006701c5, type: 3}
       propertyPath: m_Name
       value: Signboard_01
@@ -443,13 +451,48 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1241276016436082367, guid: d291b4f3e0bb5bf4baf2d8fc006701c5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5629682149696956245}
   m_SourcePrefab: {fileID: 100100000, guid: d291b4f3e0bb5bf4baf2d8fc006701c5, type: 3}
 --- !u!4 &4771798758962750613 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1905644249795406853, guid: d291b4f3e0bb5bf4baf2d8fc006701c5, type: 3}
   m_PrefabInstance: {fileID: 6362144715731486864}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5292579609021234735 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1241276016436082367, guid: d291b4f3e0bb5bf4baf2d8fc006701c5, type: 3}
+  m_PrefabInstance: {fileID: 6362144715731486864}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &5629682149696956245
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5292579609021234735}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &6374301060560463880
 PrefabInstance:
   m_ObjectHideFlags: 0
