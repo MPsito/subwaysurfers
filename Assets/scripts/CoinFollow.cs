@@ -7,26 +7,34 @@ private Transform player;
 private float followSpeed = 5f;
 [SerializeField]
 private float minumumDistance = 0.1f;
-private bool isfollowing = false;
-private Vector3 originalposition;
-public void startFollowing(Transform playertransform)
+private bool canFollow = true;
+private Vector3 originalposition = Vector3.zero;
+private void Awake()
     {
         originalposition = transform.localPosition;
+    }
+    private void OnEnable()
+    {
+        canFollow = false;
+        player = null;
+        if (originalposition != Vector3.zero)transform.localPosition = originalposition;
+    }
+public void startFollowing(Transform playertransform)
+    {
+        if (!canFollow) return;
+        canFollow = false;
         player = playertransform;
-        isfollowing = true;
     }
 public void Update()
- {
-    if (isfollowing && player != null)
+    {
+    if (player != null)
         {
             Vector3 targetPosition = player.position;
             transform.position = Vector3.Lerp(transform.position, targetPosition, followSpeed * Time.deltaTime);
             if (Vector3.Distance(transform.position, targetPosition) < minumumDistance)
             {
                 player = null;
-                isfollowing = false;
-                transform.localPosition = originalposition;
             }
         }
- }
+    }
 }

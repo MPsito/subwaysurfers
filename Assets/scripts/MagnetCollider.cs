@@ -6,7 +6,7 @@ public class MagnetCollider : MonoBehaviour
 private Transform character;
 private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("coin"))
+        if (other.CompareTag("Coin"))
         {
             CoinFollow coinFollow = other.GetComponent<CoinFollow>();
             if (coinFollow != null)
