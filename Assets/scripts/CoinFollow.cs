@@ -15,7 +15,7 @@ private void Awake()
     }
     private void OnEnable()
     {
-        canFollow = false;
+        canFollow = true;
         player = null;
         if (originalposition != Vector3.zero)transform.localPosition = originalposition;
     }
@@ -33,6 +33,7 @@ public void Update()
             transform.position = Vector3.Lerp(transform.position, targetPosition, followSpeed * Time.deltaTime);
             if (Vector3.Distance(transform.position, targetPosition) < minumumDistance)
             {
+                player.GetComponent<PlayerCollide>()?.CollectCoin(gameObject);
                 player = null;
             }
         }
