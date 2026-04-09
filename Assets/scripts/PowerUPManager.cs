@@ -32,6 +32,7 @@ private void SetPlatformsNumber()
     }
     private void SpawnPowerup(Platform platform)
     {
+        if (!platform.HasCoins()) return;
         InstantiatePoolObjects pool = powerUppools[Random.Range(0, powerUppools.Length)];
         pool.InstantiateObject(Vector3.zero);
         GameObject powerUp = pool.GetCurrentObject();

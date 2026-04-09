@@ -12,6 +12,7 @@ TagManager:
   - Obstacle
   - JumpPowerUp
   - Magnet
+  - Jetpack
   layers:
   - Default
   - TransparentFX
