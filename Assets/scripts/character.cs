@@ -14,7 +14,7 @@ public class Character : MonoBehaviour
 
     [SerializeField]
 
-    private characterData characterData;
+    private CharacterData characterData;
 
     [SerializeField]
 
@@ -78,7 +78,11 @@ public class Character : MonoBehaviour
     public Rigidbody CharacterRigidbody => characterRigidbody;
     public Animator CharacterAnimator => characterAnimator;
     public bool IsActive => isActive;
-
+    public void PlayGroudAnimation(string flyAnimationName)
+    {
+        if (isFlying) return;
+        characterAnimator.Play(flyAnimationName, 0, 0f);
+    }
     private void Awake()
 
     {
@@ -133,13 +137,14 @@ public class Character : MonoBehaviour
 
     {
 
-        if (!isActive) return;
+        if (!isActive || isFlying) return;
 
         if (isGrounded)
 
         {
 
             onJump?.Invoke();
+            PlayGroudAnimation(characterData.jumpAnimationName);
 
             characterAnimator.Play(characterData.jumpAnimationName, 0, 0f);
 
@@ -155,7 +160,7 @@ public class Character : MonoBehaviour
 
     {
 
-        if (!isActive || isRolling) return;
+        if (!isActive || isRolling || isFlying) return;
 
         if (!isGrounded)
 
@@ -164,7 +169,7 @@ public class Character : MonoBehaviour
             characterRigidbody.AddForce(Vector3.down * jumpForce * 2, ForceMode.Impulse);
 
         }
-
+        PlayGroudAnimation(characterData.rollAnimationName);
         characterAnimator.Play(characterData.rollAnimationName, 0, 0f);
 
         onRoll?.Invoke();
@@ -204,6 +209,7 @@ public class Character : MonoBehaviour
         if (isMoving || !isActive) return;
 
         onMoveToSide?.Invoke();
+        PlayGroudAnimation(characterData.moveAnimationName);
 
         characterAnimator.Play(characterData.moveAnimationName, 0, 0f);
 
