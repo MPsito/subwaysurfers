@@ -226,7 +226,7 @@ Transform:
   m_GameObject: {fileID: 53918891}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.31792, y: 0, z: -11.39}
+  m_LocalPosition: {x: 0.31792, y: 0, z: -19.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -340,6 +340,7 @@ Transform:
   - {fileID: 584217360}
   - {fileID: 260413524}
   - {fileID: 1559392589}
+  - {fileID: 1463095309}
   - {fileID: 1827564790}
   - {fileID: 445793709}
   - {fileID: 464596707}
@@ -963,6 +964,9 @@ MonoBehaviour:
   - {fileID: 382159338}
   securePlatformPrefabs:
   - {fileID: 584217359}
+  flyingPlatformPrefabs:
+  - {fileID: 1463095310}
+  flyingPlatformsHeight: 4.5
   initialPlatforms: 8
   minSpeed: 5
   maxSpeed: 12
@@ -2571,6 +2575,51 @@ Transform:
   - {fileID: 821181923}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1463095308
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1463095309}
+  - component: {fileID: 1463095310}
+  m_Layer: 0
+  m_Name: InstantiateFlyingPlatform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1463095309
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463095308}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -409.19354, y: -0.36471, z: 26277.018}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 151617218}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1463095310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463095308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c14030928ae97b42a1b9652da0bfaee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InstantiatePoolObjects
+  prefab: {fileID: 7930763074465395287, guid: 560879759347d0d43bba696f158f644c, type: 3}
 --- !u!1 &1481071443
 GameObject:
   m_ObjectHideFlags: 0
@@ -3872,7 +3921,19 @@ MonoBehaviour:
   flyDuration: 5
   onJetpackActivated:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 554734965}
+        m_TargetAssemblyTypeName: PlatformsManager, Assembly-CSharp
+        m_MethodName: InstantiateFlyingPlatform
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1570729654}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1937913436
 GameObject:
   m_ObjectHideFlags: 0
@@ -4034,7 +4095,7 @@ Transform:
   m_GameObject: {fileID: 2114325622}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.01}
+  m_LocalPosition: {x: 0, y: 0, z: -12.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -78,6 +78,7 @@ public class Character : MonoBehaviour
     public Rigidbody CharacterRigidbody => characterRigidbody;
     public Animator CharacterAnimator => characterAnimator;
     public bool IsActive => isActive;
+
     public void PlayGroudAnimation(string flyAnimationName)
     {
         if (isFlying) return;
@@ -144,9 +145,7 @@ public class Character : MonoBehaviour
         {
 
             onJump?.Invoke();
-            PlayGroudAnimation(characterData.jumpAnimationName);
-
-            characterAnimator.Play(characterData.jumpAnimationName, 0, 0f);
+            PlayGroudAnimation(characterData.jumpAnimationName);         
 
             characterRigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
 
@@ -210,8 +209,6 @@ public class Character : MonoBehaviour
 
         onMoveToSide?.Invoke();
         PlayGroudAnimation(characterData.moveAnimationName);
-
-        characterAnimator.Play(characterData.moveAnimationName, 0, 0f);
 
         isMoving= true;
 
