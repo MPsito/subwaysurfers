@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8850113436862441344}
   - component: {fileID: 5833738841671059570}
   m_Layer: 0
-  m_Name: FlyingPlatform
+  m_Name: FlyingPlatform 1
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7930763074465395287}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 8.06}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0.008858352, y: 0, z: 8.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -59,7 +59,7 @@ Transform:
   - {fileID: 8718730707470271063}
   - {fileID: 7433640727386058595}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!65 &8850113436862441344
 BoxCollider:
   m_ObjectHideFlags: 0
