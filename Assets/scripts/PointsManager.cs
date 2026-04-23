@@ -41,7 +41,7 @@ public void StartCounting()
         int highScore = PlayerPrefs.GetInt("HighScore", 0);
         if (points > highScore)
         {
-            PlayerPrefs.SetInt("Higscore", points);
+            PlayerPrefs.SetInt("HighScore", points);
             PlayerPrefs.Save();
         }
         else
